@@ -1,7 +1,7 @@
-const removeFromArray = function(array, value1, value2, value3, value4) {
+const removeFromArray = function(array, ...values) {
   let i = 0;
   while (i < array.length) {
-    if (array[i] === value1 || array[i] === value2 || array[i] === value3 || array[i] === value4) {
+    if (array[i] == values) {
       array.splice(i, 1);
     } else {
       ++i;
@@ -9,6 +9,17 @@ const removeFromArray = function(array, value1, value2, value3, value4) {
   }
   return array;
 }
+
+// Recommended easy solution, using rest operators
+// const removeFromArray = function (array, ...args) {
+//   const newArray = [];
+//   array.forEach((item) => {
+//     if (!args.includes(item)) {
+//       newArray.push(item);
+//     }
+//   });
+//   return newArray;
+// };
 
 // Do not edit below this line
 module.exports = removeFromArray;
